@@ -1,24 +1,15 @@
-# README
+# Deploy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Stack
 
-Things you may want to cover:
+Creation:
 
-* Ruby version
+```
+docker-cloud stack create -n shiny-whale
+```
 
-* System dependencies
+Update
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+docker-cloud stack update shiny-whale
+```
