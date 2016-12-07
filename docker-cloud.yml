@@ -4,9 +4,25 @@ app:
   command: puma
   environment:
     - SECRET_KEY_BASE=bc73844e976ccd037c1206da180fd2b42a6f32f91233a5ad59596eab781511865b427cfdeec5944622273a006f1bbf764f7442ace47b0622f4bdd15a4fbd2b30
+    - POSTGRES_HOST=db
+    - POSTGRES_DB=shiny_whale_production
+    - POSTGRES_USER=app
+    - POSTGRES_PASSWORD=this_is_secure_password
   deployment_strategy: emptiest_node
   ports:
    - "3000:3000"
+  links:
+    - db
+  tags:
+    - shiny_whale
+    - production
+db:
+  image: 'postgres:latest'
+  autorestart: always
+  environment:
+    - POSTGRES_USER=app
+    - POSTGRES_DB=shiny_whale_production
+    - POSTGRES_PASSWORD=this_is_secure_password
   tags:
     - shiny_whale
     - production
