@@ -39,3 +39,4 @@ rerun.txt
 .bundle
 vendor/bundle
 vendor/remote_gems
+containers
